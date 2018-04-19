@@ -1,8 +1,8 @@
 import web3 from "./web3";
 
-const address = "0x3aBBA04e8e2392139d76434C3dfeC802F8e41eeC";
+const address = "0xF0566684CDba210dea210072eE7Ba572F5afb5fd";
 
-const api = [
+const abi = [
   {
     constant: true,
     inputs: [],
@@ -26,6 +26,15 @@ const api = [
     inputs: [],
     name: "getPlayers",
     outputs: [{ name: "", type: "address[]" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "winner",
+    outputs: [{ name: "", type: "address" }],
     payable: false,
     stateMutability: "view",
     type: "function"
@@ -56,4 +65,4 @@ const api = [
   }
 ];
 
-export default new web3.eth.Contract(api, address);
+export default new web3.eth.Contract(abi, address);
